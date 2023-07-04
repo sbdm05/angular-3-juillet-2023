@@ -8,11 +8,19 @@ import { PageNotFoundComponent } from './page-not-found/pages/page-not-found/pag
 const routes: Routes = [
   // DEFINIR DES ROUTES
   // OBJET AVEC UN PATH ET UN COMPOSANT ASSOCIE
-  { path: '', component: PageListOrdersComponent },
-  { path: 'add', component: PageAddOrderComponent },
-  { path: 'edit', component: PageEditOrderComponent },
+  // REDIRECTION
+  { path: '', redirectTo: '/orders', pathMatch: 'full' },
+  // lazy loading pour orders
+
   // rendre le chargement du composant optionnel
   // LAZY LOADING
+  {
+    path: 'orders',
+    loadChildren: () =>
+      import('./orders/orders.module').then(
+        (m) => m.OrdersModule
+      ),
+  },
   {
     path: '**',
     loadChildren: () =>

@@ -1,1 +1,28 @@
-<p>page-list-orders works!</p>
+<h2>{{ title }}</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" *ngFor='let header of headers'>{{ header }}</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let obj of tab'>
+      <td>Action</td>
+      <td>{{obj.typePresta}}</td>
+      <td>{{ obj.client}}</td>
+      <td>{{ obj.nbJours}}</td>
+      <td>{{ obj.tjmHt | currency }}</td>
+      <td>total HT</td>
+      <td>total TTC</td>
+      <td>{{ obj.state}}</td>
+
+
+    </tr>
+
+  </tbody>
+</table>
+
+
+PIPE |
