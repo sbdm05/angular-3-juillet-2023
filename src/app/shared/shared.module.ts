@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { IconCloseComponent } from './icons/icon-close/icon-close.component';
 import { IconNavComponent } from './icons/icon-nav/icon-nav.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TotalPipe } from './pipes/total.pipe';
+import { BtnComponent } from './components/btn/btn.component';
+import { RouterModule } from '@angular/router';
 
 
 // DECORATOR
@@ -12,9 +15,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
     IconCloseComponent,
     IconNavComponent,
+    TotalPipe,
+    BtnComponent,
   ],
-  imports: [CommonModule, FontAwesomeModule],
-  exports: [IconCloseComponent, IconNavComponent],
+  imports: [CommonModule, FontAwesomeModule, RouterModule],
+  exports: [IconCloseComponent, IconNavComponent, TotalPipe, BtnComponent],
 })
 
 // REGLE DE NOMMMAGE ng generate module SharedModule

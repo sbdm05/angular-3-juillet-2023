@@ -9,7 +9,7 @@ import { OrdersService } from '../../service/orders.service';
 })
 export class PageListOrdersComponent {
   // string interpolation {{ propriete }}
-  public title = 'Liste des composants';
+  public title = 'Liste des commandes';
 
   // pour stocker data
   public tab!: Order[];
@@ -35,4 +35,13 @@ export class PageListOrdersComponent {
       console.log(this.tab);
     });
   }
+
+  // méthode pour calculer les montants HT et TTC avec tva en optionnel
+  // remplacée par le pipe Total
+  // public total(val: number, coef: number, tva?: number): number {
+  //   console.log('déclenché');// 6 console.log
+  //   // CHANGE DETECTION
+  //   if (tva) return val * coef * (1 + tva / 100);
+  //   return val * coef;
+  // }
 }

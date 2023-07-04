@@ -13,16 +13,24 @@
       <td>{{obj.typePresta}}</td>
       <td>{{ obj.client}}</td>
       <td>{{ obj.nbJours}}</td>
-      <td>{{ obj.tjmHt | currency }}</td>
-      <td>total HT</td>
-      <td>total TTC</td>
+      <td>{{ obj.tjmHt | currency}}</td>
+      <td>{{ obj.tjmHt | total :obj.nbJours | currency}}</td>
+      <td>{{ obj.tjmHt | total :obj.nbJours :obj.tva | currency}}</td>
       <td>{{ obj.state}}</td>
 
 
     </tr>
 
   </tbody>
+
+  <!-- <button class='btn btn-primary'>+</button> -->
+  <app-btn
+  styleBtn='btn btn-warning'
+  routeInfo='/orders/add'
+  label='Ajouter'
+  ></app-btn>
+
 </table>
 
 
-PIPE |
+
