@@ -32,7 +32,8 @@
   <div class="form-group">
     <label for="state">state</label>
     <select class="form-control" id="state" formControlName='state' >
-      <option>Option1</option>
+      <option *ngFor='let state of stateOrder' [value]='state'>{{ state }}</option>
+
     </select>
   </div>
 

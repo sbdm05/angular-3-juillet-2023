@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, MinLengthValidator, Validators } from '@angular/forms';
+import { StateOrder } from 'src/app/core/enums/state-order';
 import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../service/orders.service';
 
@@ -14,6 +15,10 @@ export class FormOrderComponent {
 
   @Input() init!: any;
   @Output() submitted = new EventEmitter();
+
+  // créer une propriété pour stocker le StateOrder
+  // Object.values() en JS
+  public stateOrder = Object.values(StateOrder);
 
   constructor(private fb: FormBuilder) {
     console.log(this.init); // ??? undefined
