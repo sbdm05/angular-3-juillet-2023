@@ -16,23 +16,27 @@ export class OrdersService {
   }
 
   // METHODE GET
-  public getDatas(): Observable<Order[]>{
-    return this.http.get<Order[]>('http://localhost:3005/orders')
+  public getDatas(): Observable<Order[]> {
+    return this.http.get<Order[]>('http://localhost:3005/orders');
   }
 
   // METHODE POST/ INSERT
-  public add(obj: Order): Observable<Order>{
+  public add(obj: Order): Observable<Order> {
     return this.http.post<Order>('http://localhost:3005/orders', obj);
   }
 
   // METHODE POUR RETROUVER UN OBJET A PARTIR D'UN ID
-  public getItemById(id: string): Observable<Order>{
+  public getItemById(id: string): Observable<Order> {
     return this.http.get<Order>(`http://localhost:3005/orders/${id}`);
   }
 
   // METHODE POUR MODIFIER OBJ
-  public update(obj: Order): Observable<Order>{
+  public update(obj: Order): Observable<Order> {
     return this.http.put<Order>(`http://localhost:3005/orders/${obj.id}`, obj);
   }
 
+  // METHODE DELETE
+  public delete(id: string): Observable<Order> {
+    return this.http.delete<Order>(`http://localhost:3005/orders/${id}`);
+  }
 }

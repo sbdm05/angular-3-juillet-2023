@@ -50,4 +50,12 @@ export class PageEditOrderComponent {
       this.router.navigate(['']);
     });
   }
+
+  public onDelete(obj:Order){
+
+    this.ordersService.delete(obj.id.toString()).subscribe(data=>{
+      console.log(data);
+      this.router.navigate(['']);
+    })
+  }
 }

@@ -33,7 +33,7 @@ export class PageListOrdersComponent {
 
     this.ordersService.getDatas().subscribe((data) => {
       this.tab = data;
-      console.log(this.tab);
+      //console.log(this.tab);
     });
   }
 

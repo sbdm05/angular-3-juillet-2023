@@ -1,6 +1,6 @@
 <p>page-edit-order works!</p>
 <div class="container" *ngIf='item' >
-  <app-form-order [init]='item' (submitted)='onEdit($event)'></app-form-order>
+  <app-form-order [init]='item' (submitted)='onEdit($event)' (deleted)='onDelete($event)'></app-form-order>
 </div>
 
 

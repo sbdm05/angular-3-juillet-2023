@@ -16,7 +16,7 @@
       <td>{{ obj.tjmHt | currency}}</td>
       <td>{{ obj.tjmHt | total :obj.nbJours | currency}}</td>
       <td>{{ obj.tjmHt | total :obj.nbJours :obj.tva | currency}}</td>
-      <td>{{ obj.state}}</td>
+      <td appState [state]='obj.state'>{{ obj.state}}</td>
 
 
     </tr>
