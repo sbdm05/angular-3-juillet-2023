@@ -4,13 +4,14 @@
   <div class="form-group">
     <label for="typePresta">type</label>
     <input type="text" class="form-control" id="typePresta" formControlName='typePresta'>
-
   </div>
+
+  <div *ngIf="form.controls['typePresta'].errors?.['minlength']">Ce champ doit contenir au minimum 5 caractères</div>
+  <div *ngIf="form.controls['typePresta'].errors?.['maxlength']">Ce champ doit contenir au maximum 15 caractères</div>
 
   <div class="form-group">
     <label for="client">client</label>
     <input type="text" class="form-control" id="client" formControlName='client'>
-
   </div>
 
   <div class="form-group">
@@ -41,5 +42,7 @@
     <textarea class="form-control" id="comment" formControlName='comment'></textarea>
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button [disabled]='this.form.invalid' type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+invalid : {{ this.form.invalid}}

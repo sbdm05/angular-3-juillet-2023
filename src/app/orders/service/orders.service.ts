@@ -20,6 +20,19 @@ export class OrdersService {
     return this.http.get<Order[]>('http://localhost:3005/orders')
   }
 
+  // METHODE POST/ INSERT
+  public add(obj: Order): Observable<Order>{
+    return this.http.post<Order>('http://localhost:3005/orders', obj);
+  }
 
+  // METHODE POUR RETROUVER UN OBJET A PARTIR D'UN ID
+  public getItemById(id: string): Observable<Order>{
+    return this.http.get<Order>(`http://localhost:3005/orders/${id}`);
+  }
+
+  // METHODE POUR MODIFIER OBJ
+  public update(obj: Order): Observable<Order>{
+    return this.http.put<Order>(`http://localhost:3005/orders/${obj.id}`, obj);
+  }
 
 }

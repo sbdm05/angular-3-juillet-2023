@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../service/orders.service';
 
@@ -27,7 +28,7 @@ export class PageListOrdersComponent {
   ];
 
   // injection de dépendance
-  constructor(private ordersService: OrdersService) {
+  constructor(private ordersService: OrdersService, private router: Router) {
     // console.log(this.ordersService.sumUp(1, 2));
 
     this.ordersService.getDatas().subscribe((data) => {
@@ -44,4 +45,10 @@ export class PageListOrdersComponent {
   //   if (tva) return val * coef * (1 + tva / 100);
   //   return val * coef;
   // }
+
+  public goToEdit(id: number){
+    // importer Router pour faire redirection
+    // orders/edit/2
+    this.router.navigate(['orders', 'edit', id])
+  }
 }

@@ -9,7 +9,7 @@
   </thead>
   <tbody>
     <tr *ngFor='let obj of tab'>
-      <td>Action</td>
+      <td><button (click)='goToEdit(obj.id)'>Editer</button></td>
       <td>{{obj.typePresta}}</td>
       <td>{{ obj.client}}</td>
       <td>{{ obj.nbJours}}</td>

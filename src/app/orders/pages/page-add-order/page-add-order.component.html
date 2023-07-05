@@ -1,8 +1,9 @@
 <div class="container">
   <p>page-add-order works!</p>
 <!-- composant avec un formulaire -->
-<app-form-order
-[init]='item'
-></app-form-order>
+  <app-form-order
+  [init]='item'
+  (submitted)='onAdd($event)'
+  ></app-form-order>
 
 </div>
